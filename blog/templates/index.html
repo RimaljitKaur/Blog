@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block extra_css %}
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/css/dataTables.bootstrap.min.css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.1.0/css/responsive.bootstrap.min.css" type="text/css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.2.1/css/buttons.bootstrap.min.css" type="text/css" />
+{% endblock %}
+
+{% block page_content %}
+<div class="container">
+    
+    <table id="table_id" class="table-borderless table-hover">
+        <thead>
+            <tr>
+                <th>published_on
+                </th>
+                <th>blogs
+                </th>
+            </tr>
+        </thead>
+        <tbody id="articles">
+        {% for i in qs %}
+        <tr>
+            <td class="mb-2">
+                <i>{{i.published_on}}</i>
+            </td>
+            <td>
+                <h4><a class="text-danger" href="blog/{{i.pk}}">{{i.title}}</a></h4>{{i.description}}
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    
+</div>
+{% endblock %}
+{% block extra_js %}
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#table_id").dataTable({
+            "processing": true,
+            "serverside": true,
+            "dom": 'Blfrtip',
+            "buttons":[
+            {
+                extend: 'collection',
+                text: 'Export',
+                buttons:[
+                    'copy',
+                    'excel',
+                    'csv',
+                    'pdfHtml5',
+                    {
+                        extend: 'pdfHtml5'
+                    }
+                ]
+            }
+            
+        ]
+        });
+    });
+</script>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+  <script src="//cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+  <!-- Responsive extension -->
+  <script src="https://cdn.datatables.net/responsive/2.1.0/js/responsive.bootstrap.min.js"></script>
+  <!-- Buttons extension -->
+  <script src="//cdn.datatables.net/buttons/1.2.1/js/dataTables.buttons.min.js"></script>
+  <script src="//cdn.datatables.net/buttons/1.2.1/js/buttons.bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+  <script src="//cdn.datatables.net/buttons/1.2.1/js/buttons.html5.min.js"></script>
+{% endblock %}

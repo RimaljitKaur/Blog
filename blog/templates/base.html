@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Blog Website</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        <!-- datatables url -->
+        
+        {% block extra_css %}
+        {% endblock %}
+    </head>
+
+
+    <body>
+        <div>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container">
+                    <div class="navbar-brand my-1 py-1"><span class="text-danger">Armin Ronacher</span>'s Thoughts and Writings</div>
+                    <ul class="navbar-nav nav">
+                        <li class="nav-item active">
+                        <a class="nav-link" href="../">
+                            <span class="text-danger">blog</span><span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="../archieve"><span class="text-danger">archieve</span></a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#"><span class="text-danger">tags</span></a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#"><span class="text-danger">projects</span></a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#"><span class="text-danger">talks</span></a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#"><span class="text-danger">about</span></a>
+                        </li>
+                    </ul>
+                </div>
+                </div>
+              </nav>
+        </div>
+        {% block page_content %}
+        {% endblock %}
+    </body>
+    <footer style="bottom: 0; margin-top:100px;; text-align: right;">
+        <p>© Copyright 2022 by Armin Ronacher.</p>
+        <p>Content licensed under the Creative Commons attribution-noncommercial-sharealike License.</p>
+        <p>Contact me via mail, twitter, github or bitbucket.</p>
+        <p>You can sponsor me on github.</p>
+        <p>More info: imprint. Subscribe to Atom feed</p>
+    </footer>
+    {% block extra_js %}
+    {% endblock %}
+</html>
