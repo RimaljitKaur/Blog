@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block page_content %}
+<div class="container" style="padding-left: 100px; padding-right: 100px; padding-top: 50px;">
+    <table class="table-borderless table-hover">
+        {% for i in post %}
+        <ul>
+            <li style="font-size: large;" class="mb-2">
+                <a href="/blog/{{i.pk}}" class="text-danger">{{i.title}}</a>
+                 | written on {{i.published_on}}
+            </li>
+        </ul>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

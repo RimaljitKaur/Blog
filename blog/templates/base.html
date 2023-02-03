@@ -21,36 +21,40 @@
         <div>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container">
-                    <div class="navbar-brand my-1 py-1"><span class="text-danger">Armin Ronacher</span>'s Thoughts and Writings</div>
+                    <div class="navbar-brand my-1 py-1"><a href="/about"><span class="text-danger">Armin Ronacher</span></a>'s Thoughts and Writings</div>
                     <ul class="navbar-nav nav">
                         <li class="nav-item active">
-                        <a class="nav-link" href="../">
+                        <a class="nav-link" href="/">
                             <span class="text-danger">blog</span><span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="../archieve"><span class="text-danger">archieve</span></a>
+                        <a class="nav-link" href="/archieve"><span class="text-danger">archieve</span></a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="#"><span class="text-danger">tags</span></a>
+                        <a class="nav-link" href="/tags"><span class="text-danger">tags</span></a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="#"><span class="text-danger">projects</span></a>
+                        <a class="nav-link" href="/projects"><span class="text-danger">projects</span></a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="#"><span class="text-danger">talks</span></a>
+                        <a class="nav-link" href="/talks"><span class="text-danger">talks</span></a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="#"><span class="text-danger">about</span></a>
+                        <a class="nav-link" href="/about"><span class="text-danger">about</span></a>
                         </li>
                     </ul>
                 </div>
                 </div>
               </nav>
+              <div class="container">
+                {% block page_content %}
+                {% endblock %}
+              </div>
+              
         </div>
-        {% block page_content %}
-        {% endblock %}
+        
     </body>
-    <footer style="bottom: 0; margin-top:100px;; text-align: right;">
+    <footer class="container" style="bottom: 0; margin-top:100px;; text-align: right;">
         <p>© Copyright 2022 by Armin Ronacher.</p>
         <p>Content licensed under the Creative Commons attribution-noncommercial-sharealike License.</p>
         <p>Contact me via mail, twitter, github or bitbucket.</p>
