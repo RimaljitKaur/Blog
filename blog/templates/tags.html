@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block extra_css %}
+{% endblock %}
+
+{% block page_content %}
+<div class="container" style="padding-left: 100px; padding-right: 100px; padding-top: 50px;">
+    {% for i in tags %}
+    <a style="font-size: large; margin: 5px;" class="text-danger" href="{{i}}">
+        {{i}}
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}

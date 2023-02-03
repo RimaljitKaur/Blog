@@ -4,17 +4,15 @@
 {% endblock %}
 
 {% block page_content %}
-{% for i in qs.published_on %}
-        <tr>
-
-            <td class="mb-2">
-                <i>{{i.published_on}}</i>
-            </td>
-            <td>
-                <h4><a class="text-danger" href="27.0.0.1:8000/blog/{{i.pk}}">{{i.title}}</a></h4>{{i.description}}
-            </td>
-        </tr>
+    <ul>
+        {% for year in years %}
+                <li>
+                        <h4><a class="text-danger">{{year}}</a></h4>
+                    </td>
+                </li>
         {% endfor %}
+        
+    </ul>
 {% endblock %}
 {% block extra_js %}
 {% endblock %}
